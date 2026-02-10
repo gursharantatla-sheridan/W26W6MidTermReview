@@ -65,7 +65,7 @@ namespace W26W6MidTermReview
             else
             {
                 double grossSales = Convert.ToDouble(txtInput2.Text);
-                double commissionRate = Convert.ToDouble(txtInput3.Text);
+                double commissionRate = Convert.ToDouble(txtInput3.Text) / 100;
 
                 _emp = new CommissionEmployee(name, grossSales, commissionRate);
             }
@@ -73,6 +73,9 @@ namespace W26W6MidTermReview
             txtGrossEarnings.Text = _emp.GrossEarnings().ToString("C");
             txtTax.Text = _emp.Tax().ToString("C");
             txtNetEarnings.Text = _emp.NetEarnings().ToString("C");
+
+            _employees.Add(_emp);
+            lstEmployees.Items.Add(name);
         }
     }
 }
