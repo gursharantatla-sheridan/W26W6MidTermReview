@@ -16,9 +16,27 @@ namespace W26W6MidTermReview
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Employee _emp;
+        private List<Employee> _employees;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            rdoHourly.IsChecked = true;
+            _employees = new List<Employee>();
+        }
+
+        private void rdoCommission_Checked(object sender, RoutedEventArgs e)
+        {
+            lblInput2.Content = "Gross Sales";
+            lblInput3.Content = "Commission Rate";
+        }
+
+        private void rdoHourly_Checked(object sender, RoutedEventArgs e)
+        {
+            lblInput2.Content = "Hours Worked";
+            lblInput3.Content = "Hourly Wage";
         }
     }
 }
